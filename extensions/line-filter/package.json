@@ -1,0 +1,40 @@
+{
+  "name": "line-filter",
+  "displayName": "Line Filter",
+  "description": "Keep or remove lines matching the Find widget search.",
+  "version": "0.0.1",
+  "publisher": "RiisDev",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      {
+        "command": "lineFilter.keep",
+        "title": "Line Filter: Keep Lines Matching Find"
+      },
+      {
+        "command": "lineFilter.remove",
+        "title": "Line Filter: Remove Lines Matching Find"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "lineFilter.keep",
+        "key": "ctrl+alt+k",
+        "when": "findWidgetVisible"
+      },
+      {
+        "command": "lineFilter.remove",
+        "key": "ctrl+alt+d",
+        "when": "findWidgetVisible"
+      }
+    ]
+  }
+}
