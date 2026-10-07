@@ -13,7 +13,7 @@ async function run(keep) {
     const end = s.end.character === 0 ? s.end.line - 1 : s.end.line;
     for (let i = s.start.line; i <= Math.max(end, s.start.line); i++) hit.add(i);
   }
-  if (!hit.size) return vscode.window.showInformationMessage('Line Filter: no matches. Open Find (Ctrl+F) and type a search first.');
+  if (!hit.size) return vscode.window.showInformationMessage('Simple Line Filter: no matches. Open Find (Ctrl+F) and type a search first.');
 
   const doc = ed.document;
   const lines = doc.getText().split(/\r?\n/);
@@ -21,7 +21,7 @@ async function run(keep) {
   const all = new vscode.Range(0, 0, doc.lineCount - 1, doc.lineAt(doc.lineCount - 1).text.length);
   await ed.edit(b => b.replace(all, out.join(doc.eol === vscode.EndOfLine.CRLF ? '\r\n' : '\n')));
   ed.selection = new vscode.Selection(0, 0, 0, 0);
-  vscode.window.setStatusBarMessage(`Line Filter: removed ${lines.length - out.length} of ${lines.length} lines`, 4000);
+  vscode.window.setStatusBarMessage(`Simple Line Filter: removed ${lines.length - out.length} of ${lines.length} lines`, 4000);
 }
 
 exports.activate = ctx => ctx.subscriptions.push(

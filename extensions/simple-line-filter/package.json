@@ -1,10 +1,15 @@
 {
-  "name": "line-filter",
-  "displayName": "Line Filter",
+  "name": "simple-line-filter",
+  "displayName": "Simple Line Filter",
   "description": "Keep or remove lines matching the Find widget search.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher": "RiisDev",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "directory": "/extensions/simple-line-filter",
+    "url": "https://github.com/RiisDev/Iris-VSCode"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -17,11 +22,11 @@
     "commands": [
       {
         "command": "lineFilter.keep",
-        "title": "Line Filter: Keep Lines Matching Find"
+        "title": "Simple Line Filter: Keep Lines Matching Find"
       },
       {
         "command": "lineFilter.remove",
-        "title": "Line Filter: Remove Lines Matching Find"
+        "title": "Simple Line Filter: Remove Lines Matching Find"
       }
     ],
     "keybindings": [
